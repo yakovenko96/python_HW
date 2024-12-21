@@ -12,5 +12,9 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     st.write("Превью данных:")
     st.dataframe(data)
+
+    options = data.city.unique()
+    selected_option = st.selectbox("Выберите опцию:", options)
+
 else:
     st.write("Пожалуйста, загрузите CSV-файл.")
